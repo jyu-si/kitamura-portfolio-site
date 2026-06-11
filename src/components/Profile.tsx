@@ -8,20 +8,20 @@ export default function Profile() {
         <SectionTitle
           index="01"
           eyebrow="PROFILE"
-          title="人と向き合い、課題を形にする。"
-          description="実装と課題整理を行き来しながら、使う人に届く体験を考えています。"
+          title="ユーザー理解と実装を、ひと続きに。"
+          description="人間中心設計・人間工学を軸に、アプリ開発、XR研究、組織活動を通じて体験改善に取り組んでいます。"
         />
 
         <div className="profile-grid">
-          <figure className="profile-portrait">
-            <img src="/assets/profile/profile.jpg" alt="北村周仁" />
-            <figcaption>
-              <span>{profile.nameEn}</span>
-              <strong>{profile.name}</strong>
-            </figcaption>
-          </figure>
-
           <div className="profile-info">
+            <div className="profile-intro">
+              <span>応募領域</span>
+              <h3>UX・人間中心設計</h3>
+              <p>
+                ユーザーの声や行動、生体情報から課題を整理し、
+                必要な体験と仕組みを考え、実装まで進めることを強みとしています。
+              </p>
+            </div>
             <div className="profile-fact">
               <span>Current</span>
               <p>{profile.affiliation[0]}</p>
@@ -49,33 +49,25 @@ export default function Profile() {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="life-grid">
-          <article className="life-story">
-            <div>
-              <p className="story-label">CLUB / LEADERSHIP</p>
-              <h3>{profile.club.title}</h3>
+          <div className="profile-activity">
+            <figure className="profile-activity-main">
+              <img src="/assets/profile/club1.jpg" alt="学生自治委員会で説明する北村周仁" />
+              <figcaption>
+                <span>LEADERSHIP</span>
+                <strong>異なる立場の声を整理し、周囲と前へ進める</strong>
+              </figcaption>
+            </figure>
+            <div className="profile-activity-sub">
+              <img src="/assets/profile/club2.jpg" alt="大学関係者との意見交換" />
               <p>{profile.club.text}</p>
             </div>
-            <div className="story-images story-images-wide">
-              {profile.club.images.map((image, index) => (
-                <img key={image} src={image} alt={`学生自治委員会での活動 ${index + 1}`} />
-              ))}
-            </div>
-          </article>
-          <article className="life-story">
-            <div>
-              <p className="story-label">OFF TIME</p>
-              <h3>{profile.favorite.title}</h3>
-              <p>{profile.favorite.text}</p>
-            </div>
-            <div className="story-images">
-              {profile.favorite.images.map((image, index) => (
-                <img key={image} src={image} alt={`旅行先での写真 ${index + 1}`} />
-              ))}
-            </div>
-          </article>
+          </div>
+        </div>
+
+        <div className="profile-principles">
+          <article><span>01</span><strong>観察・対話</strong><p>利用者や関係者の声を受け止め、背景にある課題を捉える。</p></article>
+          <article><span>02</span><strong>設計・実装</strong><p>課題を機能や仕組みに落とし込み、自ら形にする。</p></article>
+          <article><span>03</span><strong>検証・改善</strong><p>利用実績やデータから体験を確かめ、次の改善へつなげる。</p></article>
         </div>
       </div>
     </section>

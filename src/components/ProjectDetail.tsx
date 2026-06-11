@@ -9,36 +9,31 @@ export default function ProjectDetail({ project }: { project: Project }) {
             <p className="eyebrow">PROJECT {project.number}</p>
             <h2>{project.title}</h2>
             <h3>{project.subtitle}</h3>
+            <p className="detail-summary">{project.summary}</p>
             <p>{project.note}</p>
           </div>
-          <div className={`detail-hero fit-${project.heroFit ?? "cover"}`}>
-            <img src={project.hero} alt={`${project.title}のメインビジュアル`} />
-          </div>
-        </header>
-
-        <div className="detail-overview">
-          <div className="overview-statement">
-            <span>OVERVIEW</span>
-            <p>{project.summary}</p>
-            {project.result && <strong>{project.result}</strong>}
-          </div>
-          <dl>
+          <dl className="detail-facts">
             <div>
               <dt>Role</dt>
               <dd>{project.roles.join(" / ")}</dd>
             </div>
             <div>
-              <dt>Category</dt>
+              <dt>Technology</dt>
+              <dd>{(project.technologies ?? project.categories).join(" / ")}</dd>
+            </div>
+            <div>
+              <dt>UX Focus</dt>
               <dd>{project.categories.join(" / ")}</dd>
             </div>
-            {project.technologies && (
-              <div>
-                <dt>Technology</dt>
-                <dd>{project.technologies.join(" / ")}</dd>
-              </div>
-            )}
+            <div>
+              <dt>Outcome</dt>
+              <dd>{project.result ?? "課題を具体的な体験・仕組みとして提案"}</dd>
+            </div>
           </dl>
-        </div>
+          <div className={`detail-hero fit-${project.heroFit ?? "cover"}`}>
+            <img src={project.hero} alt={`${project.title}のメインビジュアル`} />
+          </div>
+        </header>
 
         <div className="detail-sections">
           {project.sections.map((section, index) => (
@@ -77,7 +72,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
         </div>
 
         <footer className="learning">
-          <p>LEARNING</p>
+          <p>LEARNING / NEXT</p>
           <h3>{project.learning}</h3>
           <a href="#projects">Projects一覧へ戻る ↑</a>
         </footer>

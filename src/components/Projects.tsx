@@ -9,8 +9,8 @@ export default function Projects({ projects }: { projects: Project[] }) {
         <SectionTitle
           index="03"
           eyebrow="PROJECTS"
-          title="考えて、つくって、確かめる。"
-          description="制作、研究、組織活動。異なるアプローチで人の困りごとに向き合った4つの取り組みです。"
+          title="課題を捉え、体験を設計した4つの取り組み"
+          description="対象ユーザー、本人の役割、用いた技術、成果を比較しながらご覧いただけます。"
         />
         <div className="project-grid">
           {projects.map((project) => (

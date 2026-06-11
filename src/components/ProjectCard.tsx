@@ -9,10 +9,14 @@ export default function ProjectCard({ project }: { project: Project }) {
           <span>{project.number}</span>
         </div>
         <div className="project-card-body">
-          <p>{project.categories.slice(0, 3).join(" / ")}</p>
+          <p className="project-card-category">{project.categories.slice(0, 3).join(" / ")}</p>
           <h3>{project.title}</h3>
           <h4>{project.subtitle}</h4>
-          <span>{project.summary}</span>
+          <dl className="project-card-facts">
+            <div><dt>Role</dt><dd>{project.roles.slice(0, 3).join(" / ")}</dd></div>
+            <div><dt>Tools</dt><dd>{(project.technologies ?? project.categories).slice(0, 3).join(" / ")}</dd></div>
+            <div><dt>Output</dt><dd>{project.result ?? project.summary}</dd></div>
+          </dl>
           <strong>
             詳細を見る <i aria-hidden="true">↘</i>
           </strong>
