@@ -1,4 +1,5 @@
 import type { Project } from "../data/projects";
+import { assetUrl } from "../utils/assetUrl";
 
 export default function ProjectDetail({ project }: { project: Project }) {
   return (
@@ -31,7 +32,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
             </div>
           </dl>
           <div className={`detail-hero fit-${project.heroFit ?? "cover"}`}>
-            <img src={project.hero} alt={`${project.title}のメインビジュアル`} />
+            <img src={assetUrl(project.hero)} alt={`${project.title}のメインビジュアル`} />
           </div>
         </header>
 
@@ -57,7 +58,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
                   {section.gallery.map((item) => (
                     <figure key={item.image}>
                       <div className={`gallery-image fit-${item.fit ?? "cover"}`}>
-                        <img src={item.image} alt={item.title} />
+                        <img src={assetUrl(item.image)} alt={item.title} />
                       </div>
                       <figcaption>
                         <strong>{item.title}</strong>

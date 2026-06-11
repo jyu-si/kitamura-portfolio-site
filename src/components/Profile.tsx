@@ -1,4 +1,5 @@
 import { profile } from "../data/profile";
+import { assetUrl } from "../utils/assetUrl";
 import SectionTitle from "./SectionTitle";
 
 export default function Profile() {
@@ -51,14 +52,14 @@ export default function Profile() {
           </div>
           <div className="profile-activity">
             <figure className="profile-activity-main">
-              <img src="/assets/profile/club1.jpg" alt="学生自治委員会で説明する北村周仁" />
+              <img src={assetUrl("/assets/profile/club1.jpg")} alt="学生自治委員会で説明する北村周仁" />
               <figcaption>
                 <span>LEADERSHIP</span>
                 <strong>異なる立場の声を整理し、周囲と前へ進める</strong>
               </figcaption>
             </figure>
             <div className="profile-activity-sub">
-              <img src="/assets/profile/club2.jpg" alt="大学関係者との意見交換" />
+              <img src={assetUrl("/assets/profile/club2.jpg")} alt="大学関係者との意見交換" />
               <p>{profile.club.text}</p>
             </div>
           </div>

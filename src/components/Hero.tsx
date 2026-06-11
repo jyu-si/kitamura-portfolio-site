@@ -1,3 +1,5 @@
+import { assetUrl } from "../utils/assetUrl";
+
 export default function Hero() {
   return (
     <section className="hero" id="top">
@@ -25,7 +27,7 @@ export default function Hero() {
           </div>
         </div>
         <aside className="hero-summary" aria-label="プロフィール概要">
-          <img src="/assets/profile/profile.jpg" alt="北村周仁のプロフィール写真" />
+          <img src={assetUrl("/assets/profile/profile.jpg")} alt="北村周仁のプロフィール写真" />
           <div className="hero-summary-copy">
             <p>奈良先端科学技術大学院大学 修士1年</p>
             <strong>ユーザー理解から設計・実装・検証まで</strong>

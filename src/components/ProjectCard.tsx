@@ -1,11 +1,12 @@
 import type { Project } from "../data/projects";
+import { assetUrl } from "../utils/assetUrl";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="project-card">
       <a href={`#${project.id}`} aria-label={`${project.title}の詳細を見る`}>
         <div className={`project-card-image fit-${project.heroFit ?? "cover"}`}>
-          <img src={project.hero} alt="" />
+          <img src={assetUrl(project.hero)} alt="" />
           <span>{project.number}</span>
         </div>
         <div className="project-card-body">
