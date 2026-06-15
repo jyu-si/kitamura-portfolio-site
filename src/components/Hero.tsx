@@ -1,5 +1,5 @@
 import { assetUrl } from "../utils/assetUrl";
-import heroSubject from "../assets/hero-subject.png";
+import heroSubject from "../assets/hero-subject.webp";
 
 export default function Hero() {
   return (

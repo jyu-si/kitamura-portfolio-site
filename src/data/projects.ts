@@ -1,6 +1,6 @@
-import entryGroupPhoto from "../assets/entry-group-photo.png";
-import figmaWadai1 from "../assets/figma-wadai-1.png";
-import figmaWadai2 from "../assets/figma-wadai-2.png";
+import entryGroupPhoto from "../assets/entry-group-photo.webp";
+import figmaWadai1 from "../assets/figma-wadai-1.webp";
+import figmaWadai2 from "../assets/figma-wadai-2.webp";
 
 export type GalleryItem = {
   image: string;
