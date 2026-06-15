@@ -22,9 +22,14 @@ export type Project = {
   categories: string[];
   roles: string[];
   technologies?: string[];
+  team: string;
+  period: string;
   summary: string;
   result?: string;
+  resultLabel?: string;
+  resultDetail?: string;
   hero: string;
+  heroSecondary?: string;
   heroFit?: "cover" | "contain";
   sections: ProjectSection[];
   learning: string;
@@ -40,10 +45,15 @@ export const projects: Project[] = [
     categories: ["Webアプリ", "新歓支援", "体験設計"],
     roles: ["PM", "要件定義", "画面設計", "フロントエンド"],
     technologies: ["Vue.js", "Firebase", "JavaScript", "Figma", "Adobe Illustrator"],
+    team: "新入生歓迎実行委員会との協働",
+    period: "2024年 新歓まつりに向けて制作",
     summary:
       "新歓情報を一元化し、新入生が部活・サークルを知り、参加行動につなげるためのアプリです。",
-    result: "新入生の7割を超える、650人以上が利用",
-    hero: "/assets/wadai-de-wadai/calendar.jpg",
+    result: "650+",
+    resultLabel: "新入生の7割超が利用",
+    resultDetail: "新入生歓迎実行委員会主催「新歓まつり」で使用",
+    hero: "/assets/wadai-de-wadai/figma-wadai-1.png",
+    heroSecondary: "/assets/wadai-de-wadai/figma-wadai-2.png",
     heroFit: "contain",
     sections: [
       {
@@ -113,8 +123,14 @@ export const projects: Project[] = [
     note: "学部3年生 デザイン情報総合演習課題",
     categories: ["UI/UX Design", "感情理解", "体験型アプリ"],
     roles: ["PM", "フロント・バックエンド実装", "企画", "体験設計"],
+    technologies: ["企画設計", "UI/UXデザイン", "フロントエンド", "バックエンド"],
+    team: "チーム制作 / 全32チーム参加",
+    period: "学部3年 デザイン情報総合演習",
     summary:
       "表情を通じて、子供が感情の理解や表出を楽しく学べるオンライン対戦ゲームアプリです。",
+    result: "3位",
+    resultLabel: "全32チーム中",
+    resultDetail: "デザイン情報総合演習 最終成果",
     hero: "/assets/wara-angel/mockup.png",
     heroFit: "contain",
     sections: [
@@ -175,8 +191,13 @@ export const projects: Project[] = [
     categories: ["Research", "VR", "生体計測", "ユーザビリティ"],
     roles: ["研究計画", "実験設計", "VR環境構築", "データ分析", "考察"],
     technologies: ["Unity", "C#", "Python", "Eye Tracking", "Facial Tracking"],
+    team: "個人研究",
+    period: "学部研究",
     summary:
       "VRショッピング環境で視線・瞳孔径・表情情報を取得し、体験中の心理状態を推定する研究です。",
+    result: "複合分析",
+    resultLabel: "視線・瞳孔径・表情・主観評価",
+    resultDetail: "心理状態を考慮したユーザビリティ提案を検討",
     hero: "/assets/research/vr-measurement.jpg",
     sections: [
       {
@@ -245,9 +266,15 @@ export const projects: Project[] = [
     note: "2023年度 委員長 / 以後役員",
     categories: ["Student Union", "課題整理", "共創", "改善活動"],
     roles: ["委員長", "企画運営", "課題整理", "関係者調整", "個人制作"],
+    technologies: ["Adobe Illustrator", "PowerPoint"],
+    team: "150人規模の学生自治組織",
+    period: "2023年度 委員長 / 以後役員",
     summary:
       "学生の声を受け止め、大学との対話や委員会活動を通じて、学生生活の課題改善に取り組みました。",
-    hero: "/assets/student-union/union.jpg",
+    result: "150人規模",
+    resultLabel: "学生自治組織の委員長",
+    resultDetail: "異なる立場の声を整理し、大学との対話・改善活動を推進",
+    hero: "/assets/student-union/entry-group-photo.png",
     sections: [
       {
         label: "Role & Process",

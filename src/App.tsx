@@ -1,3 +1,4 @@
+import { useEffect, useLayoutEffect, useState } from "react";
 import Contact from "./components/Contact";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -8,6 +9,35 @@ import Vision from "./components/Vision";
 import { projects } from "./data/projects";
 
 export default function App() {
+  const [hash, setHash] = useState(window.location.hash);
+  const projectId = hash.match(/^#\/projects\/([^/]+)$/)?.[1];
+  const activeProject = projects.find((project) => project.id === projectId);
+
+  useEffect(() => {
+    const handleHashChange = () => setHash(window.location.hash);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [activeProject?.id]);
+
+  if (activeProject) {
+    return (
+      <main className="project-page">
+        <nav className="project-page-nav" aria-label="プロジェクト詳細ナビゲーション">
+          <a href="#/" className="project-page-brand">
+            <span />
+            SHUJI KITAMURA
+          </a>
+          <a href="#/">PROJECTSへ戻る</a>
+        </nav>
+        <ProjectDetail project={activeProject} />
+      </main>
+    );
+  }
+
   return (
     <>
       <Header />
@@ -16,11 +46,6 @@ export default function App() {
         <Profile />
         <Vision />
         <Projects projects={projects} />
-        <section className="details" aria-label="プロジェクト詳細">
-          {projects.map((project) => (
-            <ProjectDetail key={project.id} project={project} />
-          ))}
-        </section>
         <Contact />
       </main>
     </>

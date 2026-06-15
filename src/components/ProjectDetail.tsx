@@ -3,7 +3,7 @@ import { assetUrl } from "../utils/assetUrl";
 
 export default function ProjectDetail({ project }: { project: Project }) {
   return (
-    <article className="project-detail" id={project.id}>
+    <article className={`project-detail project-detail-${project.id}`} id={project.id}>
       <div className="container">
         <header className="detail-header">
           <div className="detail-heading">
@@ -19,20 +19,36 @@ export default function ProjectDetail({ project }: { project: Project }) {
               <dd>{project.roles.join(" / ")}</dd>
             </div>
             <div>
-              <dt>Technology</dt>
+              <dt>Tools</dt>
               <dd>{(project.technologies ?? project.categories).join(" / ")}</dd>
             </div>
             <div>
-              <dt>UX Focus</dt>
-              <dd>{project.categories.join(" / ")}</dd>
+              <dt>Team</dt>
+              <dd>{project.team}</dd>
             </div>
             <div>
-              <dt>Outcome</dt>
-              <dd>{project.result ?? "課題を具体的な体験・仕組みとして提案"}</dd>
+              <dt>Period</dt>
+              <dd>{project.period}</dd>
             </div>
           </dl>
-          <div className={`detail-hero fit-${project.heroFit ?? "cover"}`}>
+          <div className="detail-impact">
+            <p>Outcome</p>
+            <strong>{project.result}</strong>
+            <h3>{project.resultLabel}</h3>
+            <span>{project.resultDetail}</span>
+          </div>
+          <div
+            className={`detail-hero fit-${project.heroFit ?? "cover"} ${
+              project.heroSecondary ? "has-pair" : ""
+            }`}
+          >
             <img src={assetUrl(project.hero)} alt={`${project.title}のメインビジュアル`} />
+            {project.heroSecondary && (
+              <img
+                src={assetUrl(project.heroSecondary)}
+                alt={`${project.title}のランキング画面`}
+              />
+            )}
           </div>
         </header>
 
@@ -75,7 +91,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <footer className="learning">
           <p>LEARNING / NEXT</p>
           <h3>{project.learning}</h3>
-          <a href="#projects">Projects一覧へ戻る ↑</a>
+          <a href="#/">Projects一覧へ戻る ↑</a>
         </footer>
       </div>
     </article>
