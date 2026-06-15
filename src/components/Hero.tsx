@@ -1,4 +1,5 @@
 import { assetUrl } from "../utils/assetUrl";
+import heroSubject from "../assets/hero-subject.png";
 
 export default function Hero() {
   return (
@@ -20,7 +21,7 @@ export default function Hero() {
         </div>
         <img
           className="hero-person"
-          src={assetUrl("/assets/profile/hero-subject.png")}
+          src={assetUrl(heroSubject)}
           alt="北村周仁"
         />
         <p className="hero-slogan">FAST ALONE, FAR TOGETHER.</p>

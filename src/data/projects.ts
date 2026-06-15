@@ -1,3 +1,7 @@
+import entryGroupPhoto from "../assets/entry-group-photo.png";
+import figmaWadai1 from "../assets/figma-wadai-1.png";
+import figmaWadai2 from "../assets/figma-wadai-2.png";
+
 export type GalleryItem = {
   image: string;
   title: string;
@@ -52,8 +56,8 @@ export const projects: Project[] = [
     result: "650+",
     resultLabel: "新入生の7割超が利用",
     resultDetail: "新入生歓迎実行委員会主催「新歓まつり」で使用",
-    hero: "/assets/wadai-de-wadai/figma-wadai-1.png",
-    heroSecondary: "/assets/wadai-de-wadai/figma-wadai-2.png",
+    hero: figmaWadai1,
+    heroSecondary: figmaWadai2,
     heroFit: "contain",
     sections: [
       {
@@ -274,7 +278,7 @@ export const projects: Project[] = [
     result: "150人規模",
     resultLabel: "学生自治組織の委員長",
     resultDetail: "異なる立場の声を整理し、大学との対話・改善活動を推進",
-    hero: "/assets/student-union/entry-group-photo.png",
+    hero: entryGroupPhoto,
     sections: [
       {
         label: "Role & Process",
