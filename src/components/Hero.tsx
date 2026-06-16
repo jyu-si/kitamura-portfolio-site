@@ -7,17 +7,7 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-name" aria-label="Shuji Kitamura">
           <span>SHUJI</span>
-          <span className="hero-last-name">
-            <span>KITAMU</span>
-            <span className="hero-ra">RA</span>
-          </span>
-        </div>
-        <div className="hero-name hero-name-overlay" aria-hidden="true">
-          <span>SHUJI</span>
-          <span className="hero-last-name">
-            <span>KITAMU</span>
-            <span className="hero-ra">RA</span>
-          </span>
+          <span>KITAMURA</span>
         </div>
         <img
           className="hero-person"

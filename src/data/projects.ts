@@ -127,7 +127,7 @@ export const projects: Project[] = [
     note: "学部3年生 デザイン情報総合演習課題",
     categories: ["UI/UX Design", "感情理解", "体験型アプリ"],
     roles: ["PM", "フロント・バックエンド実装", "企画", "体験設計"],
-    technologies: ["企画設計", "UI/UXデザイン", "フロントエンド", "バックエンド"],
+    technologies: ["Unity", "C#", "OpenCV", "Firebase", "Figma"],
     team: "チーム制作 / 全32チーム参加",
     period: "学部3年 デザイン情報総合演習",
     summary:
