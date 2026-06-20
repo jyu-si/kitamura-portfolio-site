@@ -876,59 +876,6 @@ dd {
   font-weight: 700;
 }
 
-.contact-section {
-  color: var(--white);
-  background: #101010;
-}
-
-.contact-section .section-title {
-  border-color: rgb(255 255 255 / 0.18);
-}
-
-.contact-section .section-title .eyebrow {
-  color: #a9c5ff;
-}
-
-.contact-section .section-title div > p {
-  color: rgb(255 255 255 / 0.65);
-}
-
-.contact-panel {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  padding: 18px 0 58px;
-}
-
-.contact-panel > p {
-  font-size: 24px;
-  line-height: 1.7;
-  font-weight: 600;
-}
-
-.contact-links {
-  display: grid;
-  align-content: start;
-  border-top: 1px solid rgb(255 255 255 / 0.18);
-}
-
-.contact-links span {
-  padding: 16px 0;
-  color: rgb(255 255 255 / 0.7);
-  border-bottom: 1px solid rgb(255 255 255 / 0.18);
-  font-size: 12px;
-}
-
-.site-footer {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 22px;
-  border-top: 1px solid rgb(255 255 255 / 0.18);
-  color: rgb(255 255 255 / 0.6);
-  font-size: 11px;
-  font-weight: 600;
-}
-
 @media (max-width: 1500px) {
   .profile-layout {
     grid-template-columns: minmax(440px, 0.9fr) minmax(580px, 1.1fr);
@@ -1113,8 +1060,7 @@ dd {
   .project-grid,
   .detail-header,
   .detail-section,
-  .learning,
-  .contact-panel {
+  .learning {
     grid-template-columns: 1fr;
   }
 
@@ -1233,13 +1179,6 @@ dd {
     padding: 24px 20px;
   }
 
-  .contact-panel {
-    gap: 30px;
-  }
-
-  .site-footer {
-    gap: 20px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

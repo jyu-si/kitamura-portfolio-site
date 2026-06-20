@@ -29,8 +29,11 @@ export const profile = {
     images: ["/assets/profile/club1.jpg", "/assets/profile/club2.jpg"],
   },
   favorite: {
-    title: "Eating & Tourism",
-    text: "食べることと旅行が好きです。観光しながら、その土地のおいしいものを楽しんでいます。",
-    images: ["/assets/profile/favorite1.jpg", "/assets/profile/favorite2.jpg"],
+    title: "観光と写真",
+    text: "観光して美しい景色を眺め、美味しい食べ物を食べ、その体験を写真として残しています。",
+    images: [
+      "/assets/profile/favorite-travel-beach.jpg",
+      "/assets/profile/favorite-travel-food.jpg",
+    ],
   },
 };

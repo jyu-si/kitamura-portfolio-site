@@ -65,7 +65,11 @@ export default function Profile() {
                 <h3>Favorite</h3>
                 <div className="favorite-images">
                   {profile.favorite.images.map((image, index) => (
-                    <img key={image} src={assetUrl(image)} alt={index === 0 ? "食事" : "旅行"} />
+                    <img
+                      key={image}
+                      src={assetUrl(image)}
+                      alt={index === 0 ? "旅先で撮影した海の景色" : "旅先で楽しんだ食事"}
+                    />
                   ))}
                 </div>
                 <h4>{profile.favorite.title}</h4>
