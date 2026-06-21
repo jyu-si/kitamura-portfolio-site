@@ -29,8 +29,8 @@ export const profile = {
     images: ["/assets/profile/club1.jpg", "/assets/profile/club2.jpg"],
   },
   favorite: {
-    title: "観光と写真",
-    text: "観光して美しい景色を眺め、美味しい食べ物を食べ、その体験を写真として残しています。",
+    title: "旅と写真",
+    text: "旅先で出会った美しい景色や、その土地ならではの食を楽しみ、心に残った瞬間を写真に収めています。",
     images: [
       "/assets/profile/favorite-travel-beach.jpg",
       "/assets/profile/favorite-travel-food.jpg",
