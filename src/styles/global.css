@@ -1250,17 +1250,19 @@ dd {
 
 .wadai-phone-image {
   display: grid;
-  height: 350px;
+  height: 470px;
   place-items: center;
   margin-bottom: 22px;
+  padding: 20px 0;
   overflow: hidden;
   background: var(--blue-pale);
 }
 
 .wadai-phone-image img {
-  width: 100%;
-  height: 100%;
-  padding: 22px;
+  width: auto;
+  height: 430px;
+  max-width: calc(100% - 40px);
+  padding: 0;
   object-fit: contain;
 }
 
@@ -1539,7 +1541,14 @@ dd {
     display: none;
   }
 
-  .wadai-phone-image,
+  .wadai-phone-image {
+    height: 430px;
+  }
+
+  .wadai-phone-image img {
+    height: 390px;
+  }
+
   .wadai-adoption-image {
     height: 350px;
   }
@@ -1866,13 +1875,18 @@ dd {
     gap: 42px;
   }
 
-  .wadai-phone-image,
-  .wadai-adoption-image {
-    height: 330px;
+  .wadai-phone-image {
+    height: 500px;
+    padding: 18px 0;
   }
 
-  .wadai-phone-image {
-    height: 300px;
+  .wadai-phone-image img {
+    height: 464px;
+    max-width: calc(100% - 36px);
+  }
+
+  .wadai-adoption-image {
+    height: 330px;
   }
 
   .wadai-outcome {
