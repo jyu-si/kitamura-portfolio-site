@@ -52,7 +52,14 @@ const processSteps = [
   "ユーザーニーズ",
 ];
 
-const designDecisions = [
+type DesignDecision = {
+  requirement: string;
+  title: string;
+  text: string;
+  image: string;
+};
+
+const designDecisions: DesignDecision[] = [
   {
     requirement: "探しやすい",
     title: "新歓カレンダー",
@@ -70,6 +77,12 @@ const designDecisions = [
     title: "スタンプ・ランキング",
     text: "参加記録と達成状況を可視化し、参加後の達成感と、次の団体へ向かうきっかけをつくりました。",
     image: "/assets/wadai-de-wadai/stamp.jpg",
+  },
+  {
+    requirement: "参加を実際の体験につなげる",
+    title: "参加特典",
+    text: "アプリ内の参加記録を特典の受け取りにつなげ、画面上の達成感を実際の体験へ広げました。",
+    image: "/assets/wadai-de-wadai/reward.jpg",
   },
 ];
 
@@ -157,10 +170,7 @@ export default function WadaiProjectContent() {
             title="分散した新歓情報を、参加につながる体験へ"
           >
             <p>
-              新歓情報はSNS、掲示物、各団体の発信など複数の場所に分散しており、新入生にとって日程や団体を比較し、参加する団体を選ぶ負担が大きい状態でした。
-            </p>
-            <p>
-              そこで、情報を一か所に集約するだけでなく、興味を持った新入生が実際の参加へ踏み出し、その後も複数の団体へ参加しやすくなる体験を目指しました。
+              新歓情報はSNS、掲示物、各団体の発信など複数の場所に分散しており、新入生にとって日程や団体を比較し、参加する団体を選ぶ負担が大きい状態でした。そこで、情報を一か所に集約するだけでなく、興味を持った新入生が実際の参加へ踏み出し、その後も複数の団体へ参加しやすくなる体験を目指しました。
             </p>
           </SectionHeading>
 
@@ -185,10 +195,7 @@ export default function WadaiProjectContent() {
             title="新入生のつまずきを、3つのユーザーニーズへ"
           >
             <p>
-              新入生を一括りにせず、新歓参加までの行動とつまずきを「情報探索」「参加のきっかけ」「複数団体への参加」の3タイプに整理しました。
-            </p>
-            <p>
-              各タイプのAs-Isジャーニーから困りごとを抽出し、上位課題へ抽象化したうえでTo-Be状態を定義。そこからユーザーニーズを整理し、機能の優先順位を判断しました。
+              新入生を一括りにせず、新歓参加までの行動とつまずきを「情報探索」「参加のきっかけ」「複数団体への参加」の3タイプに整理しました。各タイプのAs-Isジャーニーから困りごとを抽出し、上位課題へ抽象化したうえでTo-Be状態を定義。そこからユーザーニーズを整理し、機能の優先順位を判断しました。
             </p>
           </SectionHeading>
 
@@ -288,7 +295,14 @@ export default function WadaiProjectContent() {
             {designDecisions.map((decision) => (
               <article key={decision.title}>
                 <div className="wadai-phone-image">
-                  <img src={assetUrl(decision.image)} alt={`${decision.title}の画面`} />
+                  <img
+                    src={assetUrl(decision.image)}
+                    alt={
+                      decision.title === "参加特典"
+                        ? "アプリの参加記録を確認し、特典の食券を渡す様子"
+                        : `${decision.title}の画面`
+                    }
+                  />
                 </div>
                 <p>{decision.requirement}</p>
                 <h4>{decision.title}</h4>
@@ -305,10 +319,7 @@ export default function WadaiProjectContent() {
             title="つくるだけで終わらせず、実際に使ってもらう導線まで整える"
           >
             <p>
-              アプリを新入生へ確実に届けるため、大学広報担当者と掲載・周知方法を調整しました。さらに、新入生向けガイダンスの時間を借りて、アプリの目的や利用方法を直接案内しました。
-            </p>
-            <p>
-              開発だけでなく、学内関係者との合意形成から導入、利用促進まで一貫して取り組みました。
+              アプリを新入生へ確実に届けるため、大学広報担当者と掲載・周知方法を調整しました。さらに、新入生向けガイダンスの時間を借りて、アプリの目的や利用方法を直接案内しました。開発だけでなく、学内関係者との合意形成から導入、利用促進まで一貫して取り組みました。
             </p>
           </SectionHeading>
 
@@ -373,6 +384,23 @@ export default function WadaiProjectContent() {
             </div>
           </dl>
         </section>
+
+        <aside className="wadai-official-link" aria-label="大学公式掲載">
+          <div>
+            <p>Official Feature</p>
+            <h3>和歌山大学公式サイトで紹介されました</h3>
+            <span>
+              学生発案の新入生歓迎アプリとして、取り組みの背景や機能、学内での運用が紹介されています。
+            </span>
+          </div>
+          <a
+            href="https://www.wakayama-u.ac.jp/news/2025052300074/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            大学公式記事を見る ↗
+          </a>
+        </aside>
       </div>
 
       <footer className="wadai-project-footer">
