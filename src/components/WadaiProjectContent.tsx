@@ -19,7 +19,7 @@ const personas: Persona[] = [
     label: "情報探索型",
     requirement: "探しやすい",
     challenge: "情報が分散し、日程や団体を比較しにくい",
-    need: "情報を一か所で確認し、参加先を判断できる",
+    need: "情報を一か所で確認し、参加する団体を選べる",
     features: "カレンダー / 日程一覧 / 団体詳細 / 検索",
     image: "/assets/wadai-de-wadai/persona-information.webp",
   },
@@ -27,18 +27,18 @@ const personas: Persona[] = [
     key: "motivation",
     label: "参加きっかけ型",
     requirement: "一歩を踏み出しやすい",
-    challenge: "参加するメリットや条件が分からず、最初の一歩が重い",
-    need: "参加する理由と達成状況が見え、安心して行動できる",
+    challenge: "新歓への関心が弱く、参加する理由やメリットが見えにくい",
+    need: "参加するメリットと条件が分かり、最初の一歩を踏み出しやすい",
     features: "特典表示 / スタンプ / 進捗表示 / 条件提示",
     image: "/assets/wadai-de-wadai/persona-motivation.webp",
   },
   {
     key: "circulation",
-    label: "回遊促進型",
-    requirement: "続けて回りたくなる",
-    challenge: "参加後の達成感や、次の団体へ向かう動機が弱い",
-    need: "参加記録や達成感を得ながら、複数団体を楽しく回れる",
-    features: "スタンプ / ランキング / 団体ごとの表現",
+    label: "複数参加型",
+    requirement: "次の参加につなげやすい",
+    challenge: "団体ごとの違いが分かりにくく、参加後の記録や達成感が残りにくい",
+    need: "団体の個性や参加記録が見え、次に参加する団体を選びやすい",
+    features: "団体ごとの表現 / スタンプ / 達成状況 / ランキング",
     image: "/assets/wadai-de-wadai/persona-circulation.webp",
   },
 ];
@@ -49,7 +49,7 @@ const processSteps = [
   "つまずきの抽出",
   "上位課題",
   "To-Be状態",
-  "ユーザー要求",
+  "ユーザーニーズ",
 ];
 
 const designDecisions = [
@@ -62,11 +62,11 @@ const designDecisions = [
   {
     requirement: "比較して判断できる",
     title: "団体詳細",
-    text: "団体の特徴、日時、場所を同じ形式で提示し、比較や参加判断に必要な情報を確認しやすくしました。",
+    text: "団体の特徴、日時、場所を同じ形式で提示し、比較や参加するかどうかの判断に必要な情報を確認しやすくしました。",
     image: "/assets/wadai-de-wadai/detail.jpg",
   },
   {
-    requirement: "続けて回りたくなる",
+    requirement: "次の参加につなげやすい",
     title: "スタンプ・ランキング",
     text: "参加記録と達成状況を可視化し、参加後の達成感と、次の団体へ向かうきっかけをつくりました。",
     image: "/assets/wadai-de-wadai/stamp.jpg",
@@ -157,10 +157,10 @@ export default function WadaiProjectContent() {
             title="分散した新歓情報を、参加につながる体験へ"
           >
             <p>
-              新歓情報はSNS、掲示物、各団体の発信など複数の場所に分散しており、新入生にとって日程や団体を比較し、参加先を判断する負担が大きい状態でした。
+              新歓情報はSNS、掲示物、各団体の発信など複数の場所に分散しており、新入生にとって日程や団体を比較し、参加する団体を選ぶ負担が大きい状態でした。
             </p>
             <p>
-              そこで、情報を一か所に集約するだけでなく、興味を持った新入生が実際の参加へ踏み出し、その後も複数の団体を回りたくなる体験を目指しました。
+              そこで、情報を一か所に集約するだけでなく、興味を持った新入生が実際の参加へ踏み出し、その後も複数の団体へ参加しやすくなる体験を目指しました。
             </p>
           </SectionHeading>
 
@@ -181,18 +181,18 @@ export default function WadaiProjectContent() {
         <section className="wadai-section wadai-understanding">
           <SectionHeading
             number="03"
-            label="User Understanding & User Requirements"
-            title="新入生のつまずきを、3つの体験要件へ"
+            label="User Understanding & User Needs"
+            title="新入生のつまずきを、3つのユーザーニーズへ"
           >
             <p>
-              新入生を一括りにせず、新歓参加までの行動とつまずきを「情報探索」「参加のきっかけ」「回遊の継続」の3タイプに整理しました。
+              新入生を一括りにせず、新歓参加までの行動とつまずきを「情報探索」「参加のきっかけ」「複数団体への参加」の3タイプに整理しました。
             </p>
             <p>
-              各タイプのAs-Isジャーニーから困りごとを抽出し、上位課題へ抽象化したうえでTo-Be状態を定義。そこからユーザー要求へ変換し、機能の優先順位を判断しました。
+              各タイプのAs-Isジャーニーから困りごとを抽出し、上位課題へ抽象化したうえでTo-Be状態を定義。そこからユーザーニーズを整理し、機能の優先順位を判断しました。
             </p>
           </SectionHeading>
 
-          <ol className="wadai-process" aria-label="ユーザー要求を整理したプロセス">
+          <ol className="wadai-process" aria-label="ユーザーニーズを整理したプロセス">
             {processSteps.map((step, index) => (
               <li key={step}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
@@ -204,7 +204,7 @@ export default function WadaiProjectContent() {
           <div className="wadai-overview-document">
             <div>
               <p>3 TYPE OVERVIEW</p>
-              <h4>行動の違いを、機能判断の共通基準に</h4>
+              <h4>行動の違いを、機能を選ぶ共通基準に</h4>
               <span>
                 表面的な悩みをそのまま機能化せず、上位課題と必要な状態まで整理した統合シートです。
               </span>
@@ -251,7 +251,7 @@ export default function WadaiProjectContent() {
                     <dd>{persona.challenge}</dd>
                   </div>
                   <div>
-                    <dt>ユーザー要求</dt>
+                    <dt>ユーザーニーズ</dt>
                     <dd>{persona.need}</dd>
                   </div>
                   <div>
@@ -269,7 +269,7 @@ export default function WadaiProjectContent() {
           </div>
 
           <p className="wadai-decision-note">
-            すべてのアイデアを同列に実装するのではなく、複数タイプに共通する要求と、実際の参加行動への影響を基準に機能を優先しました。
+            すべてのアイデアを同列に実装するのではなく、複数タイプに共通するニーズと、実際の参加につながるかどうかを基準に機能を優先しました。
           </p>
         </section>
 
@@ -277,10 +277,10 @@ export default function WadaiProjectContent() {
           <SectionHeading
             number="04"
             label="Design Decisions"
-            title="ユーザー要求を、実際に使える機能へ"
+            title="ユーザーニーズを、実際に使える機能へ"
           >
             <p>
-              画面を先に考えるのではなく、整理したユーザー要求に対応する形で、情報探索・参加判断・回遊を支える機能を設計しました。
+              画面を先に考えるのではなく、整理したユーザーニーズに対応する形で、情報探索・参加するかどうかの判断・複数団体への参加を支える機能を設計しました。
             </p>
           </SectionHeading>
 
@@ -302,7 +302,7 @@ export default function WadaiProjectContent() {
           <SectionHeading
             number="05"
             label="Stakeholder Collaboration & Adoption"
-            title="つくるだけで終わらせず、利用される環境まで整える"
+            title="つくるだけで終わらせず、実際に使ってもらう導線まで整える"
           >
             <p>
               アプリを新入生へ確実に届けるため、大学広報担当者と掲載・周知方法を調整しました。さらに、新入生向けガイダンスの時間を借りて、アプリの目的や利用方法を直接案内しました。
@@ -322,7 +322,7 @@ export default function WadaiProjectContent() {
               </div>
               <figcaption>
                 <p>STAKEHOLDER ALIGNMENT</p>
-                <h4>大学広報との関係者調整</h4>
+                <h4>大学広報との連携・調整</h4>
                 <span>
                   アプリの目的と新入生への価値を説明し、学内での掲載・周知方法について協議しました。
                 </span>
@@ -351,7 +351,7 @@ export default function WadaiProjectContent() {
             <p>06 / Outcome & Learning</p>
             <h3>設計した体験を、実際の利用へつなげる</h3>
             <blockquote>
-              良い体験は、画面だけでは成立しません。ユーザーの行動を理解して要求と機能へ落とし込み、関係者と協働しながら利用される環境まで整えることの重要性を学びました。
+              良い体験は、画面だけでは成立しません。ユーザーの行動を理解し、ニーズを機能へ落とし込み、関係者と協働しながら実際に使ってもらう導線まで整えることの重要性を学びました。
             </blockquote>
           </div>
           <dl className="wadai-outcome-list">
@@ -369,7 +369,7 @@ export default function WadaiProjectContent() {
             </div>
             <div>
               <dt>ADOPTION</dt>
-              <dd>関係者調整と直接案内を実施</dd>
+              <dd>大学広報との連携・調整と直接案内を実施</dd>
             </div>
           </dl>
         </section>
